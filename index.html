@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nimsara Carpenters - Excellence in Craftsmanship</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Alpine.js for interactivity -->
+    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <!-- Custom Styles -->
+    <style>
+        /* Hero section pattern background */
+        .hero-pattern {
+            background-color: #ffffff;
+            background-image: url("data:image/svg+xml,%3Csvg width='20' height='20' viewBox='0 0 20 20' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23f3f4f6' fill-opacity='0.4' fill-rule='evenodd'%3E%3Ccircle cx='3' cy='3' r='3'/%3E%3Ccircle cx='13' cy='13' r='3'/%3E%3C/g%3E%3C/svg%3E");
+        }
+
+        /* Smooth scroll behavior */
+        html {
+            scroll-behavior: smooth;
+        }
+
+        /* Active navigation link styles */
+        nav a.active {
+            color: #d97706;
+            background-color: white;
+            /* Amber 600 */
+            font-weight: bold;
+        }
+    </style>
+</head>
+
+<body class="font-sans">
+    <!-- Navigation -->
+    <nav x-data="{ isOpen: false }" class="bg-white shadow-lg fixed w-full z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-16">
+                <div class="flex">
+                    <div class="flex-shrink-0 flex items-center">
+                        <span class="text-2xl font-bold text-gray-800">NIMSARA CARPENTERS</span>
+                    </div>
+                </div>
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="#home" class="text-gray-700 hover:text-amber-600">Home</a>
+                    <a href="#services" class="text-gray-700 hover:text-amber-600">Services</a>
+                    <a href="#portfolio" class="text-gray-700 hover:text-amber-600">Portfolio</a>
+                    <a href="#about" class="text-gray-700 hover:text-amber-600">About</a>
+                    <a href="#contact" class="bg-amber-600 text-white px-4 py-2 rounded-md">Contact Us</a>
+                </div>
+                <div class="md:hidden flex items-center">
+                    <button @click="isOpen = !isOpen" class="text-gray-700">
+                        <i class="fas fa-bars text-xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <div x-show="isOpen" class="md:hidden">
+            <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+                <a href="#home" class="block px-3 py-2 text-gray-700 hover:text-amber-600">Home</a>
+                <a href="#services" class="block px-3 py-2 text-gray-700 hover:text-amber-600">Services</a>
+                <a href="#portfolio" class="block px-3 py-2 text-gray-700 hover:text-amber-600">Portfolio</a>
+                <a href="#about" class="block px-3 py-2 text-gray-700 hover:text-amber-600">About</a>
+                <a href="#contact" class="block px-3 py-2 text-amber-600">Contact Us</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero-pattern min-h-screen flex items-center pt-16">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
+            <div class="grid md:grid-cols-2 gap-8 items-center">
+                <div>
+                    <h1 class="text-4xl md:text-6xl font-bold text-gray-900 mb-6">
+                        Excellence in <span class="text-amber-600">Craftsmanship</span>
+                    </h1>
+                    <p class="text-lg text-gray-600 mb-8">
+                        Combining traditional woodworking skills with modern design concepts to create stunning,
+                        functional pieces that last generations.
+                    </p>
+                    <div class="flex space-x-4">
+                        <a href="#contact"
+                            class="bg-amber-600 text-white px-8 py-3 rounded-md hover:bg-amber-700 transition">
+                            Get Started
+                        </a>
+                        <a href="#portfolio"
+                            class="border-2 border-amber-600 text-amber-600 px-8 py-3 rounded-md hover:bg-amber-600 hover:text-white transition">
+                            View Portfolio
+                        </a>
+                    </div>
+                </div>
+                <div>
+                    <img src="images/heroSection.avif" alt="Carpenter at work" class="rounded-lg shadow-xl"
+                        style="max-height: 600px; max-width: 800px;">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="py-20 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl font-bold text-gray-900 mb-4">Our Services</h2>
+                <p class="text-gray-600">Comprehensive woodworking solutions for every need</p>
+            </div>
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="bg-white p-6 rounded-lg shadow-lg">
+                    <img src="images/funiture.avif" alt="furniture" class="h-48 w-full object-cover rounded-lg mb-4">
+                    <h3 class="text-xl font-bold mb-2">Custom Furniture</h3>
+                    <p class="text-gray-600">Bespoke furniture pieces crafted to your specifications</p>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-lg">
+                    <img src="images/interior.avif" alt="Interior design"
+                        class="h-48 w-full object-cover rounded-lg mb-4">
+                    <h3 class="text-xl font-bold mb-2">Interior Woodwork</h3>
+                    <p class="text-gray-600">Custom cabinets, shelving, and wall paneling solutions</p>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-lg">
+                    <img src="images/renovations.webp" alt="Renovation"
+                        class="h-48 w-full object-cover rounded-lg mb-4">
+                    <h3 class="text-xl font-bold mb-2">Renovations</h3>
+                    <p class="text-gray-600">Expert restoration and repair services</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Portfolio Section -->
+    <section id="portfolio" class="py-20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl font-bold text-gray-900 mb-4">Our Portfolio</h2>
+                <p class="text-gray-600">Browse through our recent projects</p>
+            </div>
+            <div class="grid md:grid-cols-3 gap-6">
+                <div class="relative group">
+                    <img src="images/dining table.jpeg" alt="Project 1"
+                        class="rounded-lg h-[500px] w-full object-cover">
+                    <div
+                        class="absolute inset-0 bg-black bg-opacity-50 opacity-0 group-hover:opacity-100 transition rounded-lg flex items-center justify-center">
+                        <div class="text-white text-center p-4">
+                            <h3 class="text-xl font-bold mb-2">Custom Dining Table</h3>
+                            <p>Handcrafted walnut dining set</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="relative group">
+                    <img src="images/kitchenCabinet.webp" alt="Project 2"
+                        class="rounded-lg h-[500px] w-full object-cover">
+                    <div
+                        class="absolute inset-0 bg-black bg-opacity-50 opacity-0 group-hover:opacity-100 transition rounded-lg flex items-center justify-center">
+                        <div class="text-white text-center p-4">
+                            <h3 class="text-xl font-bold mb-2">Modern Kitchen</h3>
+                            <p>Custom cabinetry and shelving</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="relative group">
+                    <img src="images/roof.avif" alt="Project 3" class="rounded-lg h-[500px] w-full object-cover">
+                    <div
+                        class="absolute inset-0 bg-black bg-opacity-50 opacity-0 group-hover:opacity-100 transition rounded-lg flex items-center justify-center">
+                        <div class="text-white text-center p-4">
+                            <h3 class="text-xl font-bold mb-2">Outdoor Deck</h3>
+                            <p>Weather-resistant deck construction</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-20 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-2 gap-12 items-center">
+                <div>
+                    <img src="images/footer.webp" alt="Our Workshop"
+                        class="rounded-lg shadow-xl h-[600px] w-full object-cover">
+                </div>
+                <div>
+                    <h2 class="text-3xl font-bold text-gray-900 mb-6">About Nimsara Carpenters</h2>
+                    <p class="text-gray-600 mb-6">
+                        With over a decade of experience, we've built our reputation on quality craftsmanship,
+                        innovative designs, and exceptional customer service. Our state-of-the-art workshop and skilled
+                        team enable us to tackle projects of any scale.
+                    </p>
+                    <div class="grid grid-cols-2 gap-4">
+                        <div class="bg-white p-4 rounded-lg shadow">
+                            <h4 class="font-bold text-amber-600 text-xl mb-2">10+</h4>
+                            <p class="text-gray-600">Years Experience</p>
+                        </div>
+                        <div class="bg-white p-4 rounded-lg shadow">
+                            <h4 class="font-bold text-amber-600 text-xl mb-2">500+</h4>
+                            <p class="text-gray-600">Projects Completed</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl font-bold text-gray-900 mb-4">Contact Us</h2>
+                <p class="text-gray-600">Get in touch for a free consultation</p>
+            </div>
+            <div class="grid md:grid-cols-2 gap-12">
+                <div>
+                    <form class="space-y-6">
+                        <div>
+                            <label class="block text-gray-700 mb-2">Name</label>
+                            <input type="text"
+                                class="w-full px-4 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-amber-600">
+                        </div>
+                        <div>
+                            <label class="block text-gray-700 mb-2">Email</label>
+                            <input type="email"
+                                class="w-full px-4 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-amber-600">
+                        </div>
+                        <div>
+                            <label class="block text-gray-700 mb-2">Message</label>
+                            <textarea rows="4"
+                                class="w-full px-4 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-amber-600"></textarea>
+                        </div>
+                        <button
+                            class="bg-amber-600 text-white px-6 py-3 rounded-md hover:bg-amber-700 transition w-full">
+                            Send Message
+                        </button>
+                    </form>
+                </div>
+                <div>
+                    <div class="bg-gray-50 p-6 rounded-lg">
+                        <h3 class="text-xl font-bold mb-4">Contact Information</h3>
+                        <div class="space-y-4">
+                            <div class="flex items-center">
+                                <i class="fas fa-map-marker-alt text-amber-600 w-6"></i>
+                                <span class="text-gray-600 ml-4">No.11/1, Batawla,Padukka</span>
+                            </div>
+                            <div class="flex items-center">
+                                <i class="fas fa-phone text-amber-600 w-6"></i>
+                                <span class="text-gray-600 ml-4">+94 76 159 4919</span>
+                            </div>
+                            <div class="flex items-center">
+                                <a href="https://web.facebook.com/profile.php?id=100065195674031"><i class="fa-brands fa-facebook text-amber-600 w-6"></i></a>
+                                <i class="fa-brands fa-instagram text-amber-600 w-6"></i>
+                                <i class="fa-brands fa-tiktok text-amber-600 w-6"></i>
+                            </div>
+    </section>
+    <footer class="bg-gray-900 text-white py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-4 gap-8">
+            </div>
+        </div>
+    </footer>
+</body>
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        const sections = document.querySelectorAll('section[id]');
+        const navLinks = document.querySelectorAll('nav a');
+
+        function updateActiveLink() {
+            const scrollPosition = window.scrollY;
+
+            sections.forEach((section) => {
+                const sectionTop = section.offsetTop - 80; // Offset to adjust for fixed nav height
+                const sectionHeight = section.offsetHeight;
+
+                if (scrollPosition >= sectionTop && scrollPosition < sectionTop + sectionHeight) {
+                    navLinks.forEach((link) => link.classList.remove('active'));
+                    document
+                        .querySelector(`nav a[href="#${section.id}"]`)
+                        .classList.add('active');
+                }
+            });
+        }
+
+        // Attach event listener to window scroll event
+        window.addEventListener('scroll', updateActiveLink);
+
+        // Run on page load to set the correct active link
+        updateActiveLink();
+    });
+</script>
+
+</html>
